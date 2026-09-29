@@ -14,7 +14,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("Gestión CRUD - 2 Entidades")
+@PageTitle("Proyecto Integrador G1")
 @Route("")
 public class MainView extends VerticalLayout {
 
@@ -23,7 +23,7 @@ public class MainView extends VerticalLayout {
         setPadding(true);
         setSpacing(true);
 
-        H2 titulo = new H2("Gestión de Entidades (CRUD)");
+        H2 titulo = new H2("Proyecto Integrador G1");
 
         TabSheet tabSheet = new TabSheet();
         tabSheet.setWidthFull();
@@ -42,6 +42,7 @@ public class MainView extends VerticalLayout {
         TextField idField = new TextField("ID");
         TextField nombreField = new TextField("Nombre");
         TextField descripcionField = new TextField("Descripción");
+
 
         FormLayout form = new FormLayout(idField, nombreField, descripcionField);
 

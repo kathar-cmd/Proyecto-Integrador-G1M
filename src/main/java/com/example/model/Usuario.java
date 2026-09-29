@@ -10,14 +10,12 @@ public class Usuario {
     private String telefono;
     private String direccion;
     private String rol; // 'admin', 'usuario', etc.
-    private String estado; // 'activo', 'inactivo', 'baneado'
-    private LocalDateTime fechaRegistro;
 
     // ===================
     // Constructor completo
     // ===================
     public Usuario(Long id, String nombre, String apellido, String email, String telefono,
-            String direccion, String rol, String estado, LocalDateTime fechaRegistro) {
+            String direccion, String rol) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -25,8 +23,6 @@ public class Usuario {
         this.telefono = telefono;
         this.direccion = direccion;
         this.rol = rol;
-        this.estado = estado;
-        this.fechaRegistro = fechaRegistro;
     }
 
     // ===================
@@ -35,15 +31,12 @@ public class Usuario {
     // ===================
     public Usuario(String nombre, String apellido, String email, String telefono,
             String direccion, String rol, String estado, LocalDateTime fechaRegistro) {
-        this(null, nombre, apellido, email, telefono, direccion, rol, estado, fechaRegistro);
+        this(null, nombre, apellido, email, telefono, direccion, rol);
     }
 
     // ===================
     // Constructor vacío
     // ===================
-    public Usuario() {
-        this.fechaRegistro = LocalDateTime.now();
-    }
 
     // ===================
     // Getters y setters
@@ -102,22 +95,6 @@ public class Usuario {
 
     public void setRol(String rol) {
         this.rol = rol;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
     }
 
     @Override
