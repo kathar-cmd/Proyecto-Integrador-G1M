@@ -3,20 +3,20 @@ package com.example.model;
 import java.time.LocalDateTime;
 
 public class Usuario {
-    private Long id; // para que sea autogenerado por la BD
+    
+    private Long idusuario; // para que sea autogenerado por la BD
     private String nombre;
     private String apellido;
     private String email;
-    private String telefono;
+    private int telefono;
     private String direccion;
     private String rol; // 'admin', 'usuario', etc.
 
     // ===================
     // Constructor completo
     // ===================
-    public Usuario(Long id, String nombre, String apellido, String email, String telefono,
-            String direccion, String rol) {
-        this.id = id;
+    public Usuario(Long idusuario, String nombre, String apellido, String email, int telefono, String direccion, String rol) {
+        this.idusuario = idusuario;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -29,7 +29,7 @@ public class Usuario {
     // Constructor sin ID
     // (para insertar nuevos usuarios sin ID)
     // ===================
-    public Usuario(String nombre, String apellido, String email, String telefono,
+    public Usuario(String nombre, String apellido, String email, int telefono,
             String direccion, String rol, String estado, LocalDateTime fechaRegistro) {
         this(null, nombre, apellido, email, telefono, direccion, rol);
     }
@@ -42,11 +42,11 @@ public class Usuario {
     // Getters y setters
     // ===================
     public Long getId() {
-        return id;
+        return idusuario;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.idusuario = id;
     }
 
     public String getNombre() {
@@ -73,11 +73,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -99,6 +99,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", rol=" + rol + "]";
+        return "Usuario [id=" + idusuario + ", nombre=" + nombre + ", email=" + email + ", rol=" + rol + "]";
     }
 }
